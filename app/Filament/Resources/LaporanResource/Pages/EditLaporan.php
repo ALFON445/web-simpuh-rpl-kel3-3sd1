@@ -13,7 +13,13 @@ class EditLaporan extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make(), // Tombol delete di halaman edit
         ];
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        // Redirect setelah delete ke halaman list laporan
+        return route('filament.resources.laporan.index');
     }
 }
